@@ -1,6 +1,7 @@
 import React from "react";
 import {Button, Navbar, Nav, Container, NavDropdown, Modal} from 'react-bootstrap'
 import MainIcon from './Images/View_My_Weather_icon.jpg'
+import AboutModal from "./AboutModal";
 
 export default class Home extends React.Component{
     constructor(){
@@ -35,18 +36,18 @@ export default class Home extends React.Component{
                          {/* Model Body */}
                          <Modal show={this.state.display} onHide={()=>{this.controlModal()}}>
                              <Modal.Header closeButton>
-                                 About
+                                 <h1>About</h1> 
                              </Modal.Header>
 
                              <Modal.Body>
-                                 This App shows the current weather of any city entered by the user.<br/>
-                                 Enjoy!!!
+                                 <AboutModal />
                              </Modal.Body>
 
                              <Modal.Footer>
                                  <Button variant="success" onClick={()=>{this.controlModal()}}>Done</Button>
                              </Modal.Footer>
                          </Modal>
+
                        </Nav>
                      </Navbar.Collapse>
                 </Container>
