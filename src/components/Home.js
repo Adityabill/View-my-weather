@@ -1,7 +1,8 @@
 import React from "react";
-import {Button, Navbar, Nav, Container, NavDropdown, Modal} from 'react-bootstrap'
+import {Button, Navbar, Nav, Container, Modal} from 'react-bootstrap'
 import MainIcon from './Images/View_My_Weather_icon.jpg'
 import AboutModal from "./AboutModal";
+import Weather from "./Weather";
 
 export default class Home extends React.Component{
     constructor(){
@@ -52,6 +53,9 @@ export default class Home extends React.Component{
                      </Navbar.Collapse>
                 </Container>
                   </Navbar>
+                </div>
+                <div>
+                    <Weather />
                 </div>
             </div>
         )
