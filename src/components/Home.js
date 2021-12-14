@@ -20,6 +20,7 @@ export default class Home extends React.Component{
     render(){
         return(
             <div>
+                {/* Navigation Bar */}
                 <div>
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
@@ -29,7 +30,6 @@ export default class Home extends React.Component{
                        <Nav className="me-auto">
                        </Nav>
                        <Nav>
-                         <Nav.Link href="">Home</Nav.Link>
                          <Nav.Link onClick={()=>{this.controlModal()}}>
                            About
                          </Nav.Link>
