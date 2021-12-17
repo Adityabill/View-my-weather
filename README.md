@@ -1,3 +1,5 @@
+![Lines of code](https://img.shields.io/tokei/lines/github/Adityabill/View-my-weather?color=Green&logo=GitHub&style=for-the-badge)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
