@@ -32,7 +32,10 @@ export default class WeatherResult extends React.Component{
         return(
             <div>
                 {/* <p>{this.state.location}</p>    */}             
-                
+                {this.props.search_city}<br/>
+                {this.props.temperature}<br/>
+                {this.props.feels_like_data}<br/>
+                {this.props.humidity_data}<br/>
                 <div>
                     {/* <p>Temperature: {this.state.temperature}&deg;C</p>
                     <p>{this.state.humidity}</p> */}
