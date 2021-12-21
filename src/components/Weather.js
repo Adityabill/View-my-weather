@@ -8,7 +8,7 @@ export default class Weather extends React.Component{
     constructor(){
         super();
         this.state={
-            city: 'Kolkata',
+            city: null,
             temp: null,
             humidity: null,
             feels_like: null,

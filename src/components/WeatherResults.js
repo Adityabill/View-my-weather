@@ -4,53 +4,56 @@ import Axios from "axios";
 export default class WeatherResult extends React.Component{
     constructor(){
         super();
-        /* this.state={
-            temperature: null,
-            humidity: null,
-            location: null
-        } */
+        this.state={
+            temperature_default: null,
+            humidity_default: null,
+            location_default: null,
+            feels_like_data_default: null
+        }
     }
 
-    /* WeatherOutput = () => {
-        Axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${this.props.city}&appid=4149f38a602563200c95016a01cd334b&units=metric`).then((response)=>{
-            console.warn(response);
-        });
-    } */
 
-    //WeatherOutput(){
-            /* componentDidMount(){
-                fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.props.city}&appid=4149f38a602563200c95016a01cd334b&units=metric`).then((response)=>{
-                    response.json().then((output)=>{
-                        console.warn(output)
-                        this.setState({temperature: output.main.temp, humidity: output.main.humidity, location: output.name})
-                    })
-                }
-                )
-            } */
-    //}
+    //API call for default render
+    componentDidMount(){
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=Kolkata&appid=4149f38a602563200c95016a01cd334b&units=metric`).then((response)=>{
+            response.json().then((output)=>{
+                console.warn(output)
+                this.setState({
+                    temperature_default: output.main.temp, 
+                    humidity_default: output.main.humidity, 
+                    location_default: output.name,
+                    feels_like_data_default: output.main.feels_like,
+                })
+            })
+        }
+        )
+    }
+
     render(){
         return(
             <div>
-                {/* <p>{this.state.location}</p>    */}             
-                {this.props.search_city}<br/>
-                {this.props.temperature}<br/>
-                {this.props.feels_like_data}<br/>
-                {this.props.humidity_data}<br/>
-                <div>
-                    {/* <p>Temperature: {this.state.temperature}&deg;C</p>
-                    <p>{this.state.humidity}</p> */}
-                    {/* {
-                        this.state.weather_results?
-                        this.state.weather_results.map((weather_result)=>
-                           <div>
-                               <p>Temperature: {weather_result.main.temp}</p>
-                           </div>
-                        ):
-
-                        <p>City not found</p>
-
-                    }        */}             
+                {  
+                this.props.search_city?(
+                //Data to be rendered if search is made
+                <div>          
+                    {this.props.search_city}<br/>
+                    {this.props.temperature}<br/>
+                    {this.props.feels_like_data}<br/>
+                    {this.props.humidity_data}<br/>
                 </div>
+                ):
+                
+                //Data to be rendered is no search is made(default)
+                <div>
+                    {this.state.location_default}<br/>
+                    {this.state.temperature_default}<br/>
+                    {this.state.feels_like_data_default}<br/>
+                    {this.state.humidity_default}<br/>
+                </div>
+
+                }
+                             
+                
                 
             </div>
         )
