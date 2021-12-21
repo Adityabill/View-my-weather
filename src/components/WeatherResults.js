@@ -37,18 +37,18 @@ export default class WeatherResult extends React.Component{
                 //Data to be rendered if search is made
                 <div>          
                     {this.props.search_city}<br/>
-                    {this.props.temperature}<br/>
-                    {this.props.feels_like_data}<br/>
-                    {this.props.humidity_data}<br/>
+                    Current Temperature: {this.props.temperature}&deg;C &ensp;
+                    Feels Like: {this.props.feels_like_data}&deg;C<br/>
+                    Humidity: {this.props.humidity_data} %<br/>
                 </div>
                 ):
                 
                 //Data to be rendered is no search is made(default)
                 <div>
                     {this.state.location_default}<br/>
-                    {this.state.temperature_default}<br/>
-                    {this.state.feels_like_data_default}<br/>
-                    {this.state.humidity_default}<br/>
+                    Current Temperature: {this.state.temperature_default}&deg;C &ensp;
+                    Feels Like: {this.state.feels_like_data_default}&deg;C<br/>
+                    Humidity: {this.state.humidity_default} %<br/>
                 </div>
 
                 }
