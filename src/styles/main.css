@@ -1,0 +1,10 @@
+.weather-div{
+    border: 5px solid black;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.location-data{
+    font-weight: 900;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
