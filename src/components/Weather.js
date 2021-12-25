@@ -15,6 +15,7 @@ export default class Weather extends React.Component{
             location: null,
             status_code: null,
             country_code: null,
+            description: null,
         }
     }
     
@@ -30,6 +31,7 @@ export default class Weather extends React.Component{
                     location: response.data.name,
                     status_code: response.data.cod,
                     country_code: response.data.sys.country,
+                    description: response.data.weather[0].main
 
                 })
         });
@@ -41,7 +43,7 @@ export default class Weather extends React.Component{
     }
     render(){
         return(
-            <div className="container">
+            <div className="container ">
                 
 
                 {/* Search Bar */}
@@ -60,6 +62,7 @@ export default class Weather extends React.Component{
                             humidity_data={this.state.humidity}
                             status_code_data={this.state.status_code}
                             country_code_data={this.state.country_code}
+                            description_data={this.state.description}
                         />
                     </div>
             </div>

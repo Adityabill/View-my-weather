@@ -11,6 +11,7 @@ export default class WeatherResult extends React.Component{
             feels_like_data_default: null,
             status_code_d: null,
             country_code_default: null,
+            description_default: null,
         }
     }
 
@@ -19,7 +20,7 @@ export default class WeatherResult extends React.Component{
     componentDidMount(){
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=Kolkata&appid=4149f38a602563200c95016a01cd334b&units=metric`).then((response)=>{
             response.json().then((output)=>{
-                console.warn(output)
+                console.warn(output.weather[0].icon)
                 this.setState({
                     temperature_default: output.main.temp, 
                     humidity_default: output.main.humidity, 
@@ -27,6 +28,7 @@ export default class WeatherResult extends React.Component{
                     feels_like_data_default: output.main.feels_like,
                     //status_code_d: output.cod
                     country_code_default: output.sys.country,
+                    description_default: output.weather[0].main,
                 })
             })
         }
@@ -40,7 +42,8 @@ export default class WeatherResult extends React.Component{
                 this.props.search_city?(
                 //Data to be rendered if search is made
                 <div className="weather-div">          
-                    {this.props.search_city}, {this.props.country_code_data}<br/>
+                    <span className="location-data">{this.props.search_city}, {this.props.country_code_data}<br/></span>
+                    <span>{this.props.description_data}</span><br/>
                     Current Temperature: {this.props.temperature}&deg;C &ensp;
                     Feels Like: {this.props.feels_like_data}&deg;C<br/>
                     Humidity: {this.props.humidity_data} %<br/>
@@ -51,6 +54,7 @@ export default class WeatherResult extends React.Component{
                 //Data to be rendered is no search is made(default)
                 <div className="weather-div">
                     <span className="location-data">{this.state.location_default}, {this.state.country_code_default}</span><br/>
+                    <span>{this.state.description_default}</span><br/>
                     Current Temperature: {this.state.temperature_default}&deg;C &ensp;
                     Feels Like: {this.state.feels_like_data_default}&deg;C<br/>
                     Humidity: {this.state.humidity_default} %<br/>
