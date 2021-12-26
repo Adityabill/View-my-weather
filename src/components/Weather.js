@@ -16,6 +16,8 @@ export default class Weather extends React.Component{
             status_code: null,
             country_code: null,
             description: null,
+            min_temp: null,
+            max_temp: null,
         }
     }
     
@@ -31,7 +33,9 @@ export default class Weather extends React.Component{
                     location: response.data.name,
                     status_code: response.data.cod,
                     country_code: response.data.sys.country,
-                    description: response.data.weather[0].main
+                    description: response.data.weather[0].main,
+                    min_temp: response.data.main.temp_min,
+                    max_temp: response.data.main.temp_max,
 
                 })
         });
@@ -63,6 +67,8 @@ export default class Weather extends React.Component{
                             status_code_data={this.state.status_code}
                             country_code_data={this.state.country_code}
                             description_data={this.state.description}
+                            min_temperature={this.state.min_temp}
+                            max_temperature={this.state.max_temp}
                         />
                     </div>
             </div>
