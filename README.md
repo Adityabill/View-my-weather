@@ -1,4 +1,3 @@
-![Lines of code](https://img.shields.io/tokei/lines/github/Adityabill/View-my-weather?color=Green&logo=GitHub&style=for-the-badge)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Adityabill/View-my-weather?color=Green&logo=Github&style=for-the-badge)
 
 # Getting Started with Create React App
